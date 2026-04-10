@@ -1,0 +1,13 @@
+USE wave_friend;
+
+DROP TABLE IF EXISTS bonds; 
+
+CREATE TABLE bonds(
+    id INT NOT NULL AUTO_INCREMENT,
+    user1_id INT NN,
+    user2_id INT NN,
+    bonded_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_bonds_user1 FOREIGN KEY (user1_id) REFERENCES users(id), ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_bonds_user2 FOREIGN KEY (user2_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
