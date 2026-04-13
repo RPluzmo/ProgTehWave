@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "qwe";
+$password = "qwe";
 $conn = new PDO("mysql:host=$servername", $username, $password);
 
 $conn->exec("SET FOREIGN_KEY_CHECKS = 0;");
